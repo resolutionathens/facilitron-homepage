@@ -1,0 +1,293 @@
+// variables
+$facilitron-blue: #42A5F5
+$action-blue: #1E88E5
+$dk-blue: #2D324B
+$lt-gray: #F5F5F5
+$md-gray: #979797
+$dk-gray: #4A4A4A
+
+// video-testing
+.homepage-hero-module
+  border-right: none
+  border-left: none
+  position: relative
+
+.no-video .video-container video,
+.touch .video-container video
+  display: none
+
+.no-video .video-container .poster,
+.touch .video-container .poster
+  display: block !important
+
+.video-container
+  position: relative
+  bottom: 0%
+  left: 0%
+  height: 100vh
+  width: 100vw
+  overflow: hidden
+  background: #000
+
+.video-container .poster img
+  width: 100%
+  bottom: 0
+  position: absolute
+
+.video-container .filter
+  z-index: 50
+  position: absolute
+  background: rgba(0, 0, 0, 0.5)
+  width: 100%
+
+.video-container .title-container
+  z-index: 75
+  position: absolute
+  top: 35%
+  width: 100%
+  text-align: center
+  color: #fff
+  .headline
+    h1
+      text-transform: uppercase
+      font-weight: 400
+  .header-cta
+    visibility: hidden
+    +media-breakpoint-up(sm)
+      visibility: visible
+
+.video-container .description .inner
+  visibility: hidden
+  +media-breakpoint-up(sm)
+    visibility: visible
+    letter-spacing: 1px
+    font-size: 1.25em
+    width: 55%
+    margin: 3em auto
+
+
+header .partners-container
+    display: flex
+    flex-wrap: nowrap
+    justify-content: space-around
+    align-items: center
+    z-index: 75
+    position: absolute
+    bottom: 0
+    background: transparentize(#ffffff, 0.8)
+    width: 100%
+    padding: 10px
+    .partner
+      max-width: 100px
+      padding: 1%
+      img
+        width: 100%
+
+.video-container video
+  position: absolute
+  z-index: 0
+  bottom: 0
+
+.video-container video.fillWidth
+  width: 100%
+
+
+// typography
+html
+  font-size: 18px
+
+.h2-responsive
+  font-weight: 300
+  color: $action-blue
+  margin-bottom: 1em
+  font-size: 36px
+  line-height: 48px
+
+p
+  font-weight: 300
+  color: $dk-gray
+  line-height: 32px
+  margin-bottom: 2em
+
+blockquote
+  font-size: 16px
+  line-height: 27px
+  font-style: italic
+  border-left: 2px solid $action-blue
+
+//video hero
+.full-height,
+.full-height body,
+.full-height header,
+.full-height header .view,
+.full-height body .view
+  height: 100%
+
+@media (max-width: 740px)
+  .full-height,
+  .full-height body,
+  .full-height header,
+  .full-height header .view,
+  .full-height body .view
+    height: 700px
+
+@media (min-width: 1000px) and (max-width: 1025px)
+  .full-height,
+  .full-height body,
+  .full-height header,
+  .full-height header .view,
+  .full-height body .view
+    height: 770px
+
+.video-full
+  width: 100vw
+
+/* Carousel*/
+
+.flex-center
+  color: #fff
+  p
+    color: #fff
+
+.carousel-caption
+  color: #fff
+  height: 100%
+  padding-top: 7rem
+
+// navbar
+.navbar
+  background-color: transparentize($dk-blue, 0.25)
+
+.facilitron-search
+  display: none
+  +media-breakpoint-up(lg)
+    display: block
+
+.login-button
+  color: #ffffff !important
+  border: 1px solid #fff
+  padding: 5px 10px
+  &:hover
+    color: #fff
+    text-decoration: underline
+
+.scrolling-navbar
+  -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out
+  -moz-transition: background .5s ease-in-out, padding .5s ease-in-out
+  transition: background .5s ease-in-out, padding .5s ease-in-out
+
+.top-nav-collapse
+  background-color: $dk-blue
+
+@media only screen and (max-width: 768px)
+  .navbar
+    background-color: $dk-blue
+
+.intro-2
+  background: url("https://mdbootstrap.com/img/Photos/Others/architecture.jpg")no-repeat center center
+  background-size: cover
+
+.btn .fa
+  margin-left: 3px
+
+
+h6
+  line-height: 1.7
+
+.hm-gradient .full-bg-img
+  background: rgba(45,50,75,0.61)
+  background: -moz-linear-gradient(left, rgba(45,50,75,0.61) 0%, rgba(66,165,245,0.6) 100%)
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(45,50,75,0.61)), color-stop(100%, rgba(66,165,245,0.6)))
+  background: -webkit-linear-gradient(left, rgba(45,50,75,0.61) 0%, rgba(66,165,245,0.6) 100%)
+  background: -o-linear-gradient(left, rgba(45,50,75,0.61) 0%, rgba(66,165,245,0.6) 100%)
+  background: -ms-linear-gradient(left, rgba(45,50,75,0.61) 0%, rgba(66,165,245,0.6) 100%)
+  background: linear-gradient(to right, rgba(45,50,75,0.61) 0%, rgba(66,165,245,0.6) 100%)
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d324b', endColorstr='#42a5f5', GradientType=1 )
+
+@media (max-width: 450px)
+  .margins
+    margin-right: 1rem
+    margin-left: 1rem
+
+
+@media (max-width: 740px)
+  .full-height,
+  .full-height body,
+  .full-height header,
+  .full-height header .view
+      height: 1020px
+
+
+
+// sections
+.feature-box
+  text-align: center
+  .features-big
+    padding: 1em
+    .fa
+      font-size: 4rem
+      margin-bottom: 1rem
+
+
+.cta
+  padding: 1em 0
+  background: $dk-gray
+  color: #fff
+
+.cta-form
+  input
+    background: transparentize(#fff, 0.15)
+    color: $dk-gray
+    padding: 0.25rem
+    margin-top: 20px
+    &:focus
+      background: #fff
+
+// media-queries
+.homepage-img-l
+  order: 2
+  margin-top: 1em
+  +media-breakpoint-up(sm)
+    order: 0
+    margin-top: 0
+    align-self: center
+
+.homepage-img-r
+  margin-top: 1em
+  +media-breakpoint-up(sm)
+    margin-top: 0
+    align-self: center
+
+.homepage-text-l
+  padding: 0 2em 0.25em 2em
+  margin: 0.25em auto
+  +media-breakpoint-up(sm)
+    padding-left: 6em
+
+.homepage-text-r
+  padding: 0 2em 0.25em 2em
+  margin: 0.25em auto
+  +media-breakpoint-up(sm)
+    padding-right: 6em
+
+// footer
+footer.page-footer
+  background-color: $dk-blue
+  margin-top: 0
+  padding-top: 3em
+  font-size: 16px
+  color: #cccccc !important
+
+  nav
+    a
+      text-transform: uppercase
+      padding: 0 1em
+      &:hover
+        text-decoration: underline
+
+.footer-socials
+  font-size: 24px
+
+.facilitron-main
+  margin: 0
+  background: #fff

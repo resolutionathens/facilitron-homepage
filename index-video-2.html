@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en" class="full-height">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Facilitron is revolutionizing facility management</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/mdb.css" rel="stylesheet">
+  <script src="./js/jquery-3.1.1.min.js" charset="utf-8"></script>
+  <script src="./js/popper.min.js" charset="utf-8"></script>
+  <script src="./js/bootstrap.min.js" charset="utf-8"></script>
+  <script src="./js/mdb.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    /** Document Ready Functions **/
+    /********************************************************************/
+
+    $(document).ready(function() {
+      new WOW().init();
+      // Resive video
+      scaleVideoContainer();
+
+      initBannerVideoSize('.video-container .poster img');
+      initBannerVideoSize('.video-container .filter');
+      initBannerVideoSize('.video-container video');
+
+      $(window).on('resize', function() {
+        scaleVideoContainer();
+        scaleBannerVideoSize('.video-container .poster img');
+        scaleBannerVideoSize('.video-container .filter');
+        scaleBannerVideoSize('.video-container video');
+      });
+
+    });
+
+    /** Reusable Functions **/
+    /********************************************************************/
+
+    function scaleVideoContainer() {
+
+      var height = $(window).height();
+      var unitHeight = parseInt(height) + 'px';
+      $('.homepage-hero-module').css('height', unitHeight);
+
+    }
+
+    function initBannerVideoSize(element) {
+
+      $(element).each(function() {
+        $(this).data('height', $(this).height());
+        $(this).data('width', $(this).width());
+      });
+
+      scaleBannerVideoSize(element);
+
+    }
+
+    function scaleBannerVideoSize(element) {
+
+      var windowWidth = $(window).width(),
+        windowHeight = $(window).height(),
+        videoWidth,
+        videoHeight;
+
+      $(element).each(function() {
+        var videoAspectRatio = $(this).data('height') / $(this).data('width'),
+          windowAspectRatio = windowHeight / windowWidth;
+
+        if (videoAspectRatio > windowAspectRatio) {
+          videoWidth = windowWidth;
+          videoHeight = videoWidth * videoAspectRatio;
+          $(this).css({
+            'top': -(videoHeight - windowHeight) / 2 + 'px',
+            'margin-left': 0
+          });
+        } else {
+          videoHeight = windowHeight;
+          videoWidth = videoHeight / videoAspectRatio;
+          $(this).css({
+            'margin-top': 0,
+            'margin-left': -(videoWidth - windowWidth) / 2 + 'px'
+          });
+        }
+
+        $(this).width(videoWidth).height(videoHeight);
+
+        $('.homepage-hero-module .video-container video').addClass('fadeIn animated');
+
+
+      });
+    }
+  </script>
+  <!-- Start of Async Drift Code -->
+  <script>
+  !function() {
+    var t;
+    if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0,
+    t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ],
+    t.factory = function(e) {
+      return function() {
+        var n;
+        return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+      };
+    }, t.methods.forEach(function(e) {
+      t[e] = t.factory(e);
+    }), t.load = function(t) {
+      var e, n, o, i;
+      e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"),
+      o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js",
+      n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+    });
+  }();
+  drift.SNIPPET_VERSION = '0.3.1';
+  drift.load('up4u9wm62rrt');
+  </script>
+  <!-- End of Async Drift Code -->
+</head>
+
+<body>
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+    <div class="container">
+      <div>
+        <a class="navbar-brand" href="#"><img src="./img/logos/logo-facilitron-header.png" alt="Facilitron"></a>
+      </div>
+      <!-- search bar -->
+      <div class="facilitron-search">
+        <img src="./img/mocks/search-bar.png" alt="Search Bar">
+      </div>
+      <!-- nav-items -->
+      <div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-2">
+            <li class="nav-item">
+              <a class="login-button" href="/">Log In</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!--/.Navbar-->
+
+  <!-- video-header -->
+  <div class="homepage-hero-module">
+    <div class="video-container">
+      <div class="title-container">
+        <div class="headline">
+          <h1 class="h1-responsive">The world's first district operating system</h1>
+        </div>
+        <div class="description">
+          <div class="inner">Providing solutions to the challenges of maximum internal building use, building rentals, and facility maintenance.</div>
+        </div>
+        <div class="header-cta">
+          <a class="btn btn-primary" href="#facilitron-overview">Learn more</a>
+          <a class="btn btn-primary">Get started</a>
+        </div>
+      </div>
+      <div class="partners-container">
+        <div class="partner"><img src="./img/partners/gahanna.png" alt="Gahanna"></div>
+        <div class="partner"><img src="./img/partners/sanjose.png" alt="San Jose"></div>
+        <div class="partner"><img src="./img/partners/susd.png" alt="SUSD"></div>
+        <div class="partner"><img src="./img/partners/hillsboro.png" alt="Hillsboro"></div>
+        <div class="partner"><img src="./img/partners/sj.png" alt="SJ"></div>
+        <div class="partner"><img src="./img/partners/gahanna.png" alt="Gahanna"></div>
+      </div>
+      <div class="filter"></div>
+      <video autoplay loop class="fillWidth">
+        <source src="./img/video/video-background.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.</video>
+    </div>
+  </div>
+  <!-- ./video-header -->
+
+  <div class="facilitron-main">
+    <!-- overview-section -->
+    <div class="container-fluid my-5 py-5" id="facilitron-overview">
+      <div class="row">
+        <div class="col-sm-7 homepage-text-l">
+          <h2 class="h2-responsive">Reduce workload.<br/>Increase revenue.</h2>
+          <p>Facilitron enables school districts, colleges, and municipalities to manage, showcase, and monetize their facility availability and utilization while transforming the customer experience for renters.</p>
+          <blockquote>
+            “Facilitron doesn’t cost the system one penny, organizes the paperwork and monies for auditing purposes, allows us to be consistent across the board taking responsibility off board and admins AND income helps offset expensive upgrades on facilities….HOMERUN!!!” <br><br>- Jay Brinson, Superintendent
+            <br>
+            <img src="./img/logos/wayne-county.png" alt="Wayne County School System" style="width:350px; margin-top:20px;">
+          </blockquote>
+          <a class="btn btn-primary my-4">Download Overview</a>
+        </div>
+        <div class="col-sm-5 pr-0 homepage-img-r">
+          <img class="img-fluid" align="right" src="./img/screens/ComputerMonitorSearchResults3.png" alt="Facilitron Overview">
+        </div>
+      </div>
+    </div>
+    <!-- /.overview-section -->
+
+    <!--Section: Features v.1-->
+    <!-- <section class="section mx-3 px-5 feature-box">
+      <h1 class="h2-responsive pt-4">An integrated suite of management tools.</h1>
+      <p class="section-description lead grey-text">Facilitron handles all of your scheduling, reservations, and work-order management and gives you crystal clear reports to help you maximize your revenue.</p>
+      <div class="row features-big">
+        <div class="col-md-4 mb-r">
+          <i class="fa fa-book red-text"></i>
+          <h5 class="feature-title">Scheduling</h5>
+          <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda deleniti hic.</p>
+          <a class="btn btn-outline-blue" href="#facilitron-scheduling">Learn more</a>
+        </div>
+        <div class="col-md-4 mb-r">
+          <i class="fa fa-cogs cyan-text"></i>
+          <h5 class="feature-title">Work-orders</h5>
+          <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda deleniti hic.</p>
+          <a class="btn btn-outline-blue" href="#facilitron-work-orders">Learn more</a>
+        </div>
+        <div class="col-md-4 mb-r">
+          <i class="fa fa-area-chart blue-text"></i>
+          <h5 class="feature-title">Reporting</h5>
+          <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda deleniti hic.</p>
+          <a class="btn btn-outline-blue" href="#facilitron-reporting">Learn more</a>
+        </div>
+      </div>
+    </section> -->
+
+    <!--Section: Features v.1-->
+
+    <!-- scheduling-section -->
+    <div id="facilitron-scheduling" class="img-l container-fluid my-5 py-5">
+      <div class="row">
+        <div class="col-sm-5 pl-0 homepage-img-l">
+          <img class="img-fluid" src="./img/screens/LaptopCalendarPopUp.png" alt="Facilitron Scheduling">
+        </div>
+        <div class="col-sm-7 homepage-text-r">
+          <h2 class="h2-responsive">Powerful scheduling and reservation tools.</h2>
+          <p>The Facilitron platform accommodates both internal and external reservation requests and transforms how facility owners manage their facilities by organizing all facility scheduling, calendars and communications into one place.  A streamlined online application and approval process saves administrators valuable time and makes any work flow easy and manageable.</p>
+          <blockquote>
+            “We’re extremely happy with the new system. We’ve saved so much time, it’s really been amazing.” <br><br>- Marcus Battle, Chief Business Officer <br>
+            <img src="./img/logos/east-side-high-school.png" alt="Napa Valley United School District" style="width:200px; margin-top:20px;">
+          </blockquote>
+          <a class="btn btn-primary my-4">Download Case Study</a>
+        </div>
+      </div>
+    </div>
+    <!-- /.scheduling-section -->
+
+    <!-- work-management-section -->
+    <div class="container-fluid my-5 py-5">
+      <div class="row">
+        <div class="col-sm-7 homepage-text-l">
+          <h2 class="h2-responsive">Work management.<br/>Made simple.</h2>
+          <p>Powerfully integrated with the Scheduling &amp; Reservation system, Facilitron’s Work Management System transforms the way schools manage work tasks by providing a centralized platform for intelligently creating and automating requests – from
+            complex projects to simple work orders.</p>
+            <blockquote>
+              “Facilitron has significantly reduced our administrative costs while allowing us to better monetize our facilities. The benefit really hits the bottom line.” <br><br>- Greg Nelson, VP Finance &amp; College operations <br>
+              <img src="./img/logos/college-of-marin.png" alt="College of Marin" style="width:200px; margin-top:20px;">
+            </blockquote>
+            <a class="btn btn-primary my-4">Download Case Study</a>
+          <!-- <blockquote>
+            “We were looking for a system that tackled complex facility projects in a simplified manner. Facilitron delivered.” <br><br>- Craig Rouse, Director of Facilities and Operations, Rocklin Unified School District <br>
+            <img src="./img/logos/rocklin-unified.png" alt="Rocklin Unified" style="width:200px; margin-top:20px;">
+          </blockquote> -->
+        </div>
+        <div class="col-sm-5 pr-0 homepage-img-r">
+          <img class="img-fluid" align="right" src="./img/screens/MonitorWorkManagement.png" alt="Facilitron Work Management">
+        </div>
+      </div>
+    </div>
+    <!-- /.work-management-section -->
+
+    <!-- reporting-section -->
+    <div class="img-l container-fluid my-5 py-5">
+      <div class="row">
+        <div class="col-sm-5 pl-0 homepage-img-l">
+          <img class="img-fluid" src="./img/screens/ComputerMonitorReportExploded2.png" alt="Facilitron Reporting">
+        </div>
+        <div class="col-sm-7 homepage-text-r">
+          <h2 class="h2-responsive">Harness the power of data.</h2>
+          <p>Better reporting means better insights.</p>
+          <p>Data systems monitoring facility use allow Facilitron to provide valuable business insights that have helped districts save millions of dollars spent unknowingly subsidizing community programs.</p>
+          <blockquote>
+            “...we simply can’t afford to allow the district and taxpayers to subsidize non-school related programs conducted by community groups.” <br><br>- Ken Spencer, Director of General Services, Napa Valley United School District <br>
+            <img src="./img/logos/napa-valley-united.png" alt="Napa Valley United School District" style="width:300px; margin-top:20px;">
+          </blockquote>
+          <a class="btn btn-primary my-4">Get a Free Demo</a>
+        </div>
+      </div>
+    </div>
+    <!-- /.reporting-section -->
+
+    <!-- call to action -->
+    <div class="container-fluid cta my-5">
+      <div class="row">
+        <div class="col p-5">
+          <h3 class="h3-responsive text-center">Join hundreds in the district management revolution.</h3>
+          <form class="form-inline my-4 justify-content-center cta-form">
+            <label class="sr-only" for="inlineFormInput">Email</label>
+            <input type="text" class="form-control" id="inlineFormInput" placeholder="Email">
+            <button type="submit" class="btn btn-primary">Get Started</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- /.call-to-action -->
+
+    <!-- white-paper-section -->
+    <div class="container my-5 py-5 px-5">
+      <div class="row px-5">
+        <div class="col">
+          <h2 class="h2-responsive">How public schools can better manage the balance between school and community use.</h2>
+        </div>
+      </div>
+      <div class="row px-5">
+        <div class="col-2">
+          <img src="./img/other/philip-lanoue.png" alt="Philip Lanoue">
+        </div>
+        <div class="col-10">
+          <blockquote>
+            “The use of data-driven systems in decision making ensures a new level of understanding and transparency for the community.” <br><br>- Dr. Philip Lanoue, head of PDL Consultants
+          </blockquote>
+        </div>
+        <div class="row my-4 px-5">
+          <div class="col">
+            <p>Dr. Philip Lanoue, 2015 AASA National Superindent of the Year, one of the nation’s top 50 educational innovators in digital learning, and head of PDL Consultants writes about the challenges which school districts face and how Facilitron helps school districts develop systems to effectively monitor their total operations in their use of facilities to meet both the school and community needs.</p>
+            <button type="submit" class="btn btn-primary my-2">Read the Paper</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ./white-paper -->
+
+    <!-- school-community-section -->
+    <div class="container-fluid my-5 py-5">
+      <div class="row">
+        <div class="col-sm-7 homepage-text-l">
+          <h2 class="h2-responsive">Meeting school and<br>community needs.</h2>
+          <p>Facilitron automates data gathering and relieves district personnel from record keeping and other tasks of manual systems. Facilitron shifts the burden of supporting community requests with customer service and other actions such as bill collection,
+            verifying insurance and organization status, and even repurposing declined requests.</p>
+          <blockquote>
+            “As for Facilitron, LIFE SAVER. I did facilities use for three years without them and my entire job has changed because of them. It’s like having my own staff. Seriously, best decision I’ve made.” <br><br>- Cheryl Galloway, Community Engagement
+            Manager, Gilroy United School District
+          </blockquote>
+        </div>
+        <div class="col-sm-5 pr-0 homepage-img-r">
+          <img class="img-fluid" align="right" src="./img/screens/search-results-mockup.png" alt="Facilitron Overview">
+        </div>
+      </div>
+    </div>
+    <!-- /.school-community-section -->
+
+    <!-- revenue-generator-section -->
+    <div class="container-fluid my-5 py-5">
+      <div class="row">
+        <div class="col-sm-5 pl-0 homepage-img-l">
+          <img class="img-fluid" src="./img/screens/search-results-laptop-ipad.png" alt="Facilitron Scheduling">
+        </div>
+        <div class="col-sm-7 homepage-text-r">
+          <h2 class="h2-responsive">Turn a liability into<br>a revenue generator.</h2>
+          <p>Through a unique business strategy, Facilitron partners with districts to provide software, setup and support and data analysis at no costs to districts.</p>
+          <blockquote>
+            “...we simply can’t afford to allow the district and taxpayers to subsidize non-school related programs conducted by community groups.” <br><br>- Ken Spencer, Director of General Services, Napa Valley United School District
+          </blockquote>
+        </div>
+      </div>
+    </div>
+    <!-- /.revenue-generator -->
+
+    <!-- no-setup-fees-section -->
+    <div class="container my-5 py-5">
+      <div class="row">
+        <div class="col">
+          <img src="./img/screens/search-results-all-devices.png" alt="Facilitron Search Results" class="img-fluid"><br>
+          <h2 class="h2-responsive">Facilitron turns your facilities into revenue with no set-up or maintenance fees. Don’t pay for software you don’t use.</h2>
+          <p><strong>Generate much needed funds for your district… at no cost.</strong> Facilitron accounts are completely free for both owners and renters. The only time you are charged is when your facility is rented.</p>
+        </div>
+      </div>
+    </div>
+    <!-- ./no-setup-fees -->
+  </div>
+  <!--/.Main layout-->
+
+  <!--Footer-->
+  <footer class="page-footer center-on-small-only">
+
+    <!--Footer links-->
+    <div class="container-fluid">
+      <div class="row">
+        <!--First column-->
+        <div class="col-lg-3 col-md-6 ml-auto">
+          <h5 class="title mb-3"><strong>About Facilitron</strong></h5>
+          <p>Facilitron's founders share something in common – as our kids grew up participating in sports, arts and other activities, we experienced the pain of our children's organizations trying to book facilities for practices and events. The challenge wasn’t limited to finding the right venue. There were cumbersome application processes, long waits to see whether the rental application was accepted, multiple calls to resolve scheduling conflicts, insurance compliance and more. We knew there had to be a better way and Facilitron was born.</p>
+        </div>
+        <!--/.First column-->
+        <hr class="w-100 clearfix d-sm-none">
+        <!--Second column-->
+        <div class="col-lg-2 col-md-6 ml-auto">
+          <h5 class="title mb-3"><strong>First column</strong></h5>
+          <ul>
+            <li>
+              <a href="#!">Link 1</a>
+            </li>
+            <li>
+              <a href="#!">Link 2</a>
+            </li>
+            <li>
+              <a href="#!">Link 3</a>
+            </li>
+            <li>
+              <a href="#!">Link 4</a>
+            </li>
+          </ul>
+        </div>
+        <!--/.Second column-->
+        <hr class="w-100 clearfix d-sm-none">
+        <!--Third column-->
+        <div class="col-lg-2 col-md-6 ml-auto">
+          <h5 class="title mb-3"><strong>Second column</strong></h5>
+          <ul>
+            <li>
+              <a href="#!">Link 1</a>
+            </li>
+            <li>
+              <a href="#!">Link 2</a>
+            </li>
+            <li>
+              <a href="#!">Link 3</a>
+            </li>
+            <li>
+              <a href="#!">Link 4</a>
+            </li>
+          </ul>
+        </div>
+        <!--/.Third column-->
+        <hr class="w-100 clearfix d-sm-none">
+        <!--Fourth column-->
+        <div class="col-lg-2 col-md-6 ml-auto">
+          <h5 class="title mb-3"><strong>Third column</strong></h5>
+          <ul>
+            <li>
+              <a href="#!">Link 1</a>
+            </li>
+            <li>
+              <a href="#!">Link 2</a>
+            </li>
+            <li>
+              <a href="#!">Link 3</a>
+            </li>
+            <li>
+              <a href="#!">Link 4</a>
+            </li>
+          </ul>
+        </div>
+        <!--/.Fourth column-->
+      </div>
+    </div>
+    <!--/.Footer links-->
+
+    <!--Copyright-->
+    <div class="footer-copyright">
+      <div class="container-fluid">
+        ©2017<a href="https://www.facilitron.com"> Facilitron, inc.</a>
+      </div>
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+  <!--/.Footer-->
+
+
+  <!-- SCRIPTS -->
+
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap dropdown -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+
+
+</body>
+
+</html>
